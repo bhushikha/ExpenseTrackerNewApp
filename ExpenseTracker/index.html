@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense</title>
+</head>
+
+<body>
+    <form onsubmit="addNewExpenses(event)">
+        <label for="expenseamount">Choose Expense Amount:</label>
+        <input type="number" name="expenseamount" required>
+
+        <label for="description">Description:</label>
+        <input type="text" name="description" required>
+
+        <label for="category">Choose Category:</label>
+        <select id="password" name="category">
+            <option value="food">Food</option>
+            <option value="electric">Electric</option>
+            <option value="home">Home</option>
+        </select>>
+
+        <button type="submit">Add Expense</button>
+    </form>
+    <button><a id="rzp-button">Buy Premium</a></button>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+    <ul id="listOfExpenses"></ul>
+
+
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" integrity=""></script>
+
+
+</body>
+
+</html>
