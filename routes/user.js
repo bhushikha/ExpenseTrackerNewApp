@@ -11,8 +11,6 @@
 // module.exports = router;
 
 const express = require('express');
-const axios = require('axios');
-
 const userController = require('../controller/user');
 
 const router = express.Router();

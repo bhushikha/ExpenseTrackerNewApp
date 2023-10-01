@@ -22,6 +22,7 @@ async function signup(e) {
 
         console.log(signupDetails);
         const response = await axios.post('http://localhost:4000/user/signup', signupDetails);
+        
       
             window.location.href = '../Login/login.html'
         
