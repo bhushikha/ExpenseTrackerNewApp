@@ -44,6 +44,7 @@
 
 
 const path = require('path');
+const helmet=require('helmet');
 
 const express = require('express');
 var cors = require('cors')
@@ -51,6 +52,7 @@ const sequelize = require('./util/database');
 const User = require('./models/users');
 const Expense = require('./models/expenses');
 const Order = require('./models/orders');
+const helmet=require('helmet');
 
 const userRoutes = require('./routes/user')
 const expenseRoutes = require('./routes/expense')
@@ -63,7 +65,7 @@ const dotenv = require('dotenv');
 // get config vars
 dotenv.config();
 
-
+app.use(helmet())
 app.use(cors());
 
 // app.use(bodyParser.urlencoded());  ////this is for handling forms
