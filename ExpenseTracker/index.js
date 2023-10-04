@@ -33,6 +33,33 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
     });
+    const pagination = document.getElementById('pagination')
+    function showPagination({
+        currentPage,
+        hasNextPage,
+        hasPreviousPage,
+        nextPage,
+        previousPage,
+        lastpage
+    }) {
+        pagination.innerHTML = "";
+        if (hasPreviousPage) {
+            const btn2 = document.createElement('button')
+            btn2.innerHTML = previousPage
+            btn2.addEventListener('click', () => getExpenses(previousPage))
+            pagination.appendChild(btn2)
+        }
+        const btn1 = document.createElement('button')
+        btn1.innerHTML = `<h3>${currentPage}</h3>`
+        btn1.addEventListener('click', () => getExpenses(currentPage))
+        pagination.appendChild(btn1)
+        if (hasNextPage) {
+            const btn3 = document.createElement('button')
+            btn3.innerHTML = nextPage
+            btn3.addEventListener('click', () => getExpenses(nextPage))
+            pagination.appendChild(btn3)
+        }
+    }
 
     function addNewExpensestoUI(expense) {
         const parentElement = document.getElementById('listOfExpenses');
